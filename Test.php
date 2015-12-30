@@ -43,6 +43,7 @@ class Test
         $this->assignQuestions(4);
     }
 
+    //This function queries the database and pulls random questions for each section
     private function assignQuestions($section)
     {
         $host = "localhost";
@@ -63,10 +64,11 @@ class Test
         $statement->execute(array("testSection"=>$section));
         $results = $statement->fetchAll();
 
+        //fill array with the question information
         foreach($results as $result){
-            array_push($this->questions[$section-1][1] , $result['FileLocation']);
-            array_push($this->questions[$section-1][2], $result['QuestionID']);
-            array_push($this->questions[$section-1][3], $result['CorrectAnswer']);
+            array_push($this->questions[$section-1][0] , $result['QuestionID']);
+            array_push($this->questions[$section-1][1], $result['FileLocation']);
+            array_push($this->questions[$section-1][2], $result['CorrectAnswer']);
         }
     }
 
