@@ -1,0 +1,13 @@
+php my admin? 
+(DONE) Login
+Create Test entry in db
+Insert each question attempt into db
+Edit db
+	username and password?
+	categories
+	endtime and elapsed time can be null
+Add Students/Enrollment to db
+Add Instructors to db
+
+
+Number of questions in each section?

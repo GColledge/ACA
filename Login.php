@@ -2,7 +2,7 @@
 
 session_start();
 
-if(isset($_POST['login'])){
+if(isset($_POST['Submit'])){
     include('dbConnect.php');
 
     $username = strip_tags($_POST["username"]);
@@ -41,5 +41,27 @@ if(isset($_POST['login'])){
             </script>";
     }
 }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="Login.php" method="post">
+    Username:
+    <input type = 'text' name='username' id = 'username' maxlength="60">
+    <br />
+    <br />
+    Password:
+    <input type = 'password' name='password' id='password' maxlength="30">
+    <br />
+    <br />
+    <input type='submit' name='Submit' value = 'Login' />
+</form>
+</body>
+</html>
 
 
