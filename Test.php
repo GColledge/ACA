@@ -38,9 +38,9 @@ class Test
         $host = "localhost";
 
         //TODO: fix next 3 lines
-        $dbname = "W01119526";
-        $user = "W01119526";
-        $pass = "Rachaelcs!";
+        $dbname = "";
+        $user = "";
+        $pass = "";
 
         try{
             $dbh = new PDO("mysql:host=$host; dbname=$dbname", $user, $pass);
