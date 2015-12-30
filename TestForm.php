@@ -4,16 +4,20 @@ if(!isset($_SESSION['username'])){
     header("Location:Login.php");
 }
 
-//TODO: check that the question was answered
-
+//first time on the page.  Create questions array
 if($_SESSION["count"] == 0){
     $test = new Test();
     $test->generateTest();
     $_SESSION["count"]++;
-
     $_SESSION["questions"] = $test->getTestQuestions();
+
 }else{
-    //TODO: enter into database
+    if(isset($_POST["Submit"])){
+        //enter into database
+
+
+        $_SESSION["count"]++;
+    }
 }
 
 if($_SESSION < 21) {

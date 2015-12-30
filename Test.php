@@ -3,22 +3,32 @@
 class Test
 {
     private $questions = array(
+        //section 1 questions
         array(
+            //ID array, location array, and correct answer
+            array(),
+            array(),
+            array()
+
+        ),
+
+        //section 2 questions
+        array(
+            array(),
             array(),
             array()
         ),
 
+        //section 3 questions
         array(
+            array(),
             array(),
             array()
         ),
 
+        //section 4 questions
         array(
             array(),
-            array()
-        ),
-
-        array(
             array(),
             array()
         )
@@ -27,10 +37,10 @@ class Test
 
     public function generateTest()
     {
-        $this->assignQuestions(0);
         $this->assignQuestions(1);
         $this->assignQuestions(2);
         $this->assignQuestions(3);
+        $this->assignQuestions(4);
     }
 
     private function assignQuestions($section)
@@ -49,14 +59,14 @@ class Test
             echo "Something has gone wrong: " . $e->getMessage();
         }
 
-        $statement = $dbh->prepare('SELECT QuestionID, FileLocation FROM QUESTION WHERE TestSection = :testSection ORDER BY RANDOM() LIMIT 20');
-        $statement->bindParam(':testSection', $section, PDO::PARAM_INT);
-        $statement->execute();
+        $statement = $dbh->prepare('SELECT QuestionID, FileLocation, CorrectAnswer FROM QUESTION WHERE TestSection = :testSection ORDER BY RANDOM() LIMIT 20');
+        $statement->execute(array("testSection"=>$section));
         $results = $statement->fetchAll();
 
         foreach($results as $result){
-            array_push($this->questions[$section][1] , $result['FileLocation']);
-            array_push($this->questions[$section][2], $result['QuestionID']);
+            array_push($this->questions[$section-1][1] , $result['FileLocation']);
+            array_push($this->questions[$section-1][2], $result['QuestionID']);
+            array_push($this->questions[$section-1][3], $result['CorrectAnswer']);
         }
     }
 
