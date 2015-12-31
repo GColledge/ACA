@@ -11,5 +11,11 @@ Add Students/Enrollment to db
 Add Instructors to db
 End of test will update Test table
 
+Greg's Reponsibilities
+Populate db with questions
+Review code readability
+Create User's Manual?
+
 
 Number of questions in each section?
+Can a student pick which sections to take?
