@@ -41,7 +41,7 @@ if($_SESSION["count"] == 0){
 
 //end of test
 if($_SESSION["count"] == 65){
-    $endTest = $dbh->prepare("UPDATE TEST (EndTime) VALUES (:EndTime)");
+    $endTest = $dbh->prepare("UPDATE TEST SET EndTime = :EndTime)");
     $data = array("EndTime"=>date("y-m-d H:i:s"));
 
     //TODO: redirect to results
