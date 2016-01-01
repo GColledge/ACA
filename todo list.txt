@@ -7,15 +7,18 @@ Edit db
 	username and password
 		students and admin
 	categories
-	endtime and elapsed time can be null
+	endtime can be null?
+	remove elapsed time
 Add Students/Enrollment to db
-Add Instructors to db
-End of test will update Test table
+(DONE)Add Instructors to db
+(DONE)End of test will update Test table
 Change array index to constants
 Add checks to database for Enrollment table
 Update student/enrollment/instructor
 Check fields with null
 Update isSet with new database variables
+Notice after each section
+Results page
 
 Greg's Reponsibilities
 Populate db with questions
