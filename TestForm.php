@@ -12,7 +12,7 @@ if($_SESSION["count"] == 0){
     $test->generateTest();
     $_SESSION["questions"] = $test->getTestQuestions();
     $_SESSION["section"] = 0;
-    $_SESSION["question"] = ($_SESSION["count"] % 20) + 1;
+    $_SESSION["question"] = ($_SESSION["count"] % 20);
 
     //TODO: CHECK WITH UPDATED DB
     $addTest = $dbh->prepare("INSERT INTO TEST (StudentUsername, StartTime) VALUES (:StudentUsername, :DateAndTime)");
@@ -35,14 +35,22 @@ if($_SESSION["count"] == 0){
         //update variables
         $_SESSION["count"]++;
         $_SESSION["section"] = $_SESSION["count"] / 20;
-        $_SESSION["question"] = ($_SESSION["count"] % 20) + 1;
+        $_SESSION["question"] = ($_SESSION["count"] % 20);
     }
+}
+
+//end of test
+if($_SESSION["count"] == 65){
+    $endTest = $dbh->prepare("UPDATE TEST (EndTime) VALUES (:EndTime)");
+    $data = array("EndTime"=>date("y-m-d H:i:s"));
+
+    //TODO: redirect to results
 }
 
 //show next question
 $formString = '<br /><br />
         <form action = "/TestForm.php" method = "post">
-        <label>#' . $_SESSION["questions"] . '</label>
+        <label>#' . $_SESSION["question"]++ . '</label>
         <img src = ' . $_SESSION["questions"][$_SESSION["section"]][1][$_SESSION["question"]] .
     '><br />
         <input type = "radio" name = "multiple_choice" value = "A">A<br />
