@@ -8,6 +8,7 @@ if(isset($_POST['Submit'])){
     $username = strip_tags($_POST["username"]);
     $password = strip_tags($_POST["password"]);
 
+    //TODO: CHECK WITH UPDATED DB
     $loginStatement = $dbh->prepare("SELECT * FROM STUDENT WHERE Username = :Username");
     $loginStatement->execute(array("Username"=>$username));
     $users = $loginStatement->fetchAll();

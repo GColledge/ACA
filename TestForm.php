@@ -14,7 +14,7 @@ if($_SESSION["count"] == 0){
     $_SESSION["section"] = 0;
     $_SESSION["question"] = ($_SESSION["count"] % 20) + 1;
 
-    //CHECK WITH UPDATED DB
+    //TODO: CHECK WITH UPDATED DB
     $addTest = $dbh->prepare("INSERT INTO TEST (StudentUsername, StartTime) VALUES (:StudentUsername, :DateAndTime)");
     $data = array("StudentUsername"=> $_SESSION["username"], "DateAndTime"=> date("Y-m-d H:i:s"));
     $addTest->execute($data);
