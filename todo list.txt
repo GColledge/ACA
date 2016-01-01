@@ -4,12 +4,18 @@ php my admin?
 (DONE)Create Test entry in db
 (DONE)Insert each question attempt into db
 Edit db
-	username and password?
+	username and password
+		students and admin
 	categories
 	endtime and elapsed time can be null
 Add Students/Enrollment to db
 Add Instructors to db
 End of test will update Test table
+Change array index to constants
+Add checks to database for Enrollment table
+Update student/enrollment/instructor
+Check fields with null
+Update isSet with new database variables
 
 Greg's Reponsibilities
 Populate db with questions
