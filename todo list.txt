@@ -20,11 +20,17 @@ Update isSet with new database variables
 Notice after each section
 Results page
 
-Greg's Reponsibilities
-Populate db with questions
+Greg's Reponsibilities:
+Populate db with questions and put them into /var/www/ directory
+Change lesson numbers to lesson names
+Put PHP myadmin on the server if possible
+Turn on Server at ACER
+Create "server guide" for Acer's server.
+Set auto backup for every 24 hours (midnight)
+Set the "Home Page" on the server.
+Define final product (after first testing period.)
 Review code readability
 Create User's Manual?
 
-
-Number of questions in each section?
-Can a student pick which sections to take?
+Q:Number of questions in each section? A: 10 in first, 10 in second, 20 in third, 5 in fourth
+Q: Can a student pick which sections to take? A: NO!
