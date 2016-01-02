@@ -21,13 +21,15 @@ Notice after each section
 Results page
 
 Greg's Reponsibilities:
-Populate db with questions and put them into /var/www/ directory
-Change lesson numbers to lesson names
-Put PHP myadmin on the server if possible
+(DONE on test)Populate db with questions and put them into /var/www/ directory
+(DONE)Change lesson numbers to lesson names
+(Done on test)Put PHP myadmin on the server if possible (yeah it's possible!)
+Put PHP myadmin on the server
 Turn on Server at ACER
 Create "server guide" for Acer's server.
 Set auto backup for every 24 hours (midnight)
 Set the "Home Page" on the server.
+transfer info from test server to acer server
 Define final product (after first testing period.)
 Review code readability
 Create User's Manual?
